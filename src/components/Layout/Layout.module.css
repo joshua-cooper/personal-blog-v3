@@ -14,3 +14,17 @@
   margin: auto;
   padding: 1.5rem;
 }
+
+.brand {
+  font-weight: 400;
+}
+
+.brand,
+.link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.link {
+  margin: 0 2rem;
+}

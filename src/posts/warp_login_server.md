@@ -2,8 +2,7 @@
 title: Make a simple login server in Rust with Warp and async/await
 author: Joshua Cooper
 date: 2019-11-26
-slug: warp_login_server_tutorial
-path: /posts/warp
+path: /posts/warp_login_server_tutorial
 ---
 
 First, create a new project using `cargo`.
