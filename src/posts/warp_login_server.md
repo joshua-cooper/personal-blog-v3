@@ -98,7 +98,7 @@ async fn counter(db: Arc<Mutex<u8>>) -> Result<impl warp::Reply, warp::Rejection
 The things to notice here are that we define an initial state of `0` in `main` that is wrapped by a `tokio` `Mutex` and an `Arc` so that it can be shared and mutated asynchronously.
 After that, we turn the counter into a `Filter` so that we can combine it with others.
 In this example, our `routes` `Filter` chain accepts any request with the path `"counter"` then adds `db` to the request to be used by the following `Filter`s, then finally passes it to the `counter` function.
-Note that the final `and` is replaced with `and_then` for use with `async` an function.
+Note that the final `and` is replaced with `and_then` for use with an `async` function.
 
 ## Implementing the login server
 
