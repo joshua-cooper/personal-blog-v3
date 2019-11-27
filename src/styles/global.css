@@ -14,7 +14,7 @@ p {
 }
 
 a {
-  color: red;
+  color: #333;
 }
 
 code {
@@ -26,6 +26,9 @@ code {
   html {
     background: #333;
     color: #fff;
+  }
+  a {
+    color: #ddd;
   }
   code {
     background: #222;
