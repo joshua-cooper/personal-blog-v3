@@ -6,11 +6,8 @@ const Template = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
-    <Post title={frontmatter.title}>
-      <div
-        className="blog-post-content"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+    <Post title={frontmatter.title} author={frontmatter.author}>
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </Post>
   )
 }
@@ -22,9 +19,10 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         path
         title
+        author
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }

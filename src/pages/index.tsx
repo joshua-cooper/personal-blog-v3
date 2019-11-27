@@ -3,8 +3,13 @@ import { graphql } from "gatsby"
 
 import { Link } from "gatsby"
 
+const style = {
+  maxWidth: "700px",
+  margin: "auto",
+}
+
 const PostLink = ({ post }) => (
-  <div>
+  <div style={style}>
     <Link to={post.frontmatter.path}>
       {post.frontmatter.title} ({post.frontmatter.date})
     </Link>

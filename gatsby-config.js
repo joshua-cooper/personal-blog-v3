@@ -50,7 +50,6 @@ module.exports = {
                 defaultTheme: "Quiet Light",
                 prefersDarkTheme: "Monokai",
               },
-              injectStyles: false,
             },
           },
         ],
