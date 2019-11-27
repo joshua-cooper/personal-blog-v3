@@ -1,8 +1,8 @@
 import React from "react"
 import styles from "./Layout.module.css"
-import { Link } from "gatsby"
+import {Link} from "gatsby"
 
-const Layout = ({ children }) => {
+const Layout = ({children}) => {
   return (
     <div>
       <header className={styles.header}>

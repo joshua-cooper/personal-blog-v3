@@ -1,11 +1,11 @@
 import React from "react"
-import { graphql } from "gatsby"
+import {graphql} from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
-import { Link } from "gatsby"
+import {Link} from "gatsby"
 
-const PostLink = ({ post }) => (
+const PostLink = ({post}) => (
   <div>
     <Link to={post.frontmatter.path}>
       {post.frontmatter.title} ({post.frontmatter.date})
@@ -15,7 +15,7 @@ const PostLink = ({ post }) => (
 
 const IndexPage = ({
   data: {
-    allMarkdownRemark: { edges },
+    allMarkdownRemark: {edges},
   },
 }) => {
   const Posts = edges
@@ -33,7 +33,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
       edges {
         node {
           id
