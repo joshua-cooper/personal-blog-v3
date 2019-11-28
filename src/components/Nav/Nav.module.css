@@ -36,8 +36,7 @@
   }
 
   .input:focus + .button {
-    border: 1px dotted #000;
-    background: #eee;
+    border: 1px dotted #fff;
   }
 
   .button {
@@ -47,10 +46,10 @@
     position: absolute;
     top: 0.75rem;
     right: 0.75rem;
-    background: #fff;
+    background: url("../../images/menu.svg") no-repeat center;
+    background-size: 100% 100%;
     text-align: center;
     cursor: pointer;
-    border-radius: 50%;
     z-index: 1;
     height: 2.3125rem;
     width: 2.3125rem;
