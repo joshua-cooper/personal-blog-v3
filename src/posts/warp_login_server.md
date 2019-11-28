@@ -1,15 +1,15 @@
 ---
-title: Make a simple login server in Rust with Warp and async/await
+title: Let's make a simple authentication server in Rust with Warp
 author: Joshua Cooper
 date: 2019-11-26
-path: /posts/warp_login_server_tutorial
+path: /posts/warp_auth_server_tutorial
 ---
 
 First, create a new project using `cargo`.
 
 ```sh
-cargo new login_server
-cd login_server
+cargo new warp_auth_server
+cd warp_auth_server
 ```
 
 Then add the `warp` dependency to `Cargo.toml`.
@@ -100,9 +100,9 @@ After that, we turn the counter into a `Filter` so that we can combine it with o
 In this example, our `routes` `Filter` chain accepts any request with the path `"counter"` then adds `db` to the request to be used by the following `Filter`s, then finally passes it to the `counter` function.
 Note that the final `and` is replaced with `and_then` for use with an `async` function.
 
-## Implementing the login server
+## Implementing the authentication server
 
-That's enough of the basics, now we can move on to implementing the login server.
+That's enough of the basics, now we can move on to implementing the authentication server.
 First, we need to replace the counter with a databse of users.
 For that we'll just use an in memory database, but it could easily be replaced later.
 
@@ -269,5 +269,8 @@ if verify(&user.password, credentials.password.as_bytes()) {
 
 Much better.
 That's all for now.
-This is a very simple login server but I hope this post gave you the building blocks needed to expand it for your own needs.
+This is a very simple authentication server but I hope this post gave you the building blocks needed to expand it for your own needs.
 I strongly recommend taking a look at the [`warp` documentation](https://docs.rs/warp) and if you need help, don't hesitate to ask me.
+Also, any feedback is welcome!
+
+I have put the full code for the final authentication server on [GitHub](https://github.com/joshua-cooper/warp-auth-server).
