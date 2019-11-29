@@ -107,7 +107,7 @@ First, we need to replace the counter with a databse of users.
 For that we'll just use an in memory database, but it could easily be replaced later.
 
 ```rust
-let db = Arc::new(Mutex::new(HashMap::<String, User>new()));
+let db = Arc::new(Mutex::new(HashMap::<String, User>::new()));
 let db = warp::any().map(move || Arc::clone(&db));
 ```
 
