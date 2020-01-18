@@ -13,11 +13,10 @@ cd warp_auth_server
 ```
 
 Then add the `warp` dependency to `Cargo.toml`.
-As of the writing of this post, [the latest release of warp on crates.io](https://crates.io/crates/warp) does not support the `async`/`await` syntax so we will use the [GitHub master branch](https://github.com/seanmonstar/warp) instead.
 
 ```toml
 [dependencies]
-warp = { git = "https://github.com/seanmonstar/warp" }
+warp = "0.2.0"
 ```
 
 When using `async` Rust, we also need to use an executor to poll `Future`s, so let's add a dependency on `tokio` to do that for us.
@@ -25,8 +24,8 @@ When using `async` Rust, we also need to use an executor to poll `Future`s, so l
 
 ```toml
 [dependencies]
-warp = { git = "https://github.com/seanmonstar/warp" }
-tokio = "0.2.0-alpha.6"
+warp = "0.2.0"
+tokio = { version = "0.2", features = ["macros"] }
 ```
 
 Then edit `src/main.rs` and replace the hello world program with a `warp` hello world.
@@ -121,8 +120,8 @@ Before we define the `User` struct, we should add a dependency called `serde` so
 
 ```toml
 [dependencies]
-warp = { git = "https://github.com/seanmonstar/warp" }
-tokio = "0.2.0-alpha.6"
+warp = "0.2.0"
+tokio = { version = "0.2", features = ["macros"] }
 serde = { version = "1.0", features = ["derive"] }
 ```
 
@@ -220,8 +219,8 @@ We will need to add some dependencies for password hashing.
 
 ```toml
 [dependencies]
-warp = { git = "https://github.com/seanmonstar/warp" }
-tokio = "0.2.0-alpha.6"
+warp = "0.2.0"
+tokio = { version = "0.2", features = ["macros"] }
 serde = { version = "1.0", features = ["derive"] }
 rand = "0.7.2"
 rust-argon2 = "0.6.0"
